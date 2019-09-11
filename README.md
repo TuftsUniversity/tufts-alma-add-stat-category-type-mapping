@@ -16,12 +16,11 @@
 Automate input of statistical category and mapping table, that doesn't have an import function, with the Python Selenium web driver
 
 
-
 **Input:**
 
 The input file, which the script will ask for in a file picker, needs to have the following fields, **with no header**, in a **tab-delimited** .txt file
-  - <Statistical Category Description>
-  - <Statistical Category Type> (likely all the same import)
+  - Statistical Category Description
+  - Statistical Category Type (likely all the same import)
   
 In the applications directory, create a secrets folder, and inside that folder a secrets.py file.
 
