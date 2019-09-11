@@ -22,6 +22,13 @@ Automate input of statistical category and mapping table, that doesn't have an i
 The input file, which the script will ask for in a file picker, needs to have the following fields, **with no header**, in a **tab-delimited** .txt file
   - <Statistical Category Description>
   - <Statistical Category Type> (likely all the same import)
+  
+In the applications directory, create a secrets folder, and inside that folder a secrets.py file.
+
+The file should have two lines:
+
+  - username="<an Alma username that has the General System administrator role>"
+  - password="password for that user"
 
 The script will input this table and enter each value pair in the Add Row pop up iteratively.
 
