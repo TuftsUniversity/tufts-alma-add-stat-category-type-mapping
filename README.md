@@ -32,7 +32,10 @@ The file should have two lines:
 The script will input this table and enter each value pair in the Add Row pop up iteratively.
 
 **Process:**
-  - First go into Alma, into this mapping table, and enter one of the values you want the script to enter as the new category type, with add row.
+  - This script uses Python 3, so you will have to have Python 3 installed
+  - install the dependent package, selenium, by writing
+      - python3 -m pip install -r requirements.txt
+  - Then go into Alma, into this mapping table, and enter one of the values you want the script to enter as the new category type, with add row.
     This is necessary because I could not make the script choose the "Category Type" field, and so you have to do this so the sticky setting will stick when you go to enter the other values.
   - Go to this downloaded repositories directory, and run the command python3 fileInput.py
   - follow the prompt to select your input file
