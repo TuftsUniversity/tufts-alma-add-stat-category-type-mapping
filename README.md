@@ -27,7 +27,7 @@ In the applications directory, create a secrets folder, and inside that folder a
 
 The file should have two lines:
 
-  - username="<an Alma username that has the General System administrator role>"
+  - username="an Alma username that has the General System administrator role"
   - password="password for that user"
 
 The script will input this table and enter each value pair in the Add Row pop up iteratively.
