@@ -24,7 +24,7 @@ The input file, which the script will ask for in a file picker, needs to have th
 The script will input this table and enter each value pair in the Add Row pop up iteratively.
 
 **Process:**
-  - First o into Alma, into this mapping table, and enter one of the values you want the script to enter as the new category type, with add row.
+  - First go into Alma, into this mapping table, and enter one of the values you want the script to enter as the new category type, with add row.
     This is necessary because I could not make the script choose the "Category Type" field, and so you have to do this so the sticky setting will stick when you go to enter the other values.
   - Go to this downloaded repositories directory, and run the command python3 fileInput.py
   - follow the prompt to select your input file
