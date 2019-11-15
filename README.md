@@ -20,7 +20,7 @@ Automate input of statistical category and mapping table, that doesn't have an i
 
 The input file, which the script will ask for in a file picker, needs to have the following fields, **with no header**, in a **tab-delimited** .txt file
   - Statistical Category Description
-  - Statistical Category Type (likely all the same import)
+  - Statistical Category Type (likely all the same in import)
   
 In the applications directory, create a secrets folder, and inside that folder a secrets.py file.
 
@@ -35,8 +35,6 @@ The script will input this table and enter each value pair in the Add Row pop up
   - This script uses Python 3, so you will have to have Python 3 installed
   - install the dependent package, selenium, by writing
       - python3 -m pip install -r requirements.txt
-  - Then go into Alma, into this mapping table, and enter one of the values you want the script to enter as the new category type, with add row.
-    This is necessary because I could not make the script choose the "Category Type" field, and so you have to do this so the sticky setting will stick when you go to enter the other values.
   - Go to this downloaded repositories directory, and run the command python3 fileInput.py
   - follow the prompt to select your input file
   - Don't touch your computer or mouse while the script is running
