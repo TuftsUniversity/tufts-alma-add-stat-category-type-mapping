@@ -66,12 +66,25 @@ def enter_values(driver, row):
 
     time.sleep(1)
 
-    code_element_2 = driver.find_element_by_id(type_id)
-
-    driver.find_element_by_id("pageBeannewRowrowtargetCode_hiddenSelect_button").click()
 
 
+    # driver.find_element_by_id("widgetId_Right_commappingTablesListlistheaderadd_row")
 
+    # driver.find_element_by_id("pageBeannewRowrowsourceCode1_hiddenSelect_button").click()
+    #
+    # time.sleep(1)
+
+    select = Select(driver.find_element_by_id(type_id))
+
+    select.select_by_visible_text(row[1])
+
+    # driver.find_element_by_id(type_id)
+    #
+    # time.sleep(1)
+    #
+    # driver.find_element_by_link_text(row[1]).click()
+    #
+    # time.sleep(1)
 
     if driver.find_element_by_id("cbuttonaddRow").is_displayed():
         driver.find_element_by_id("cbuttonaddRow").click()
