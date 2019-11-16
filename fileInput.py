@@ -2,6 +2,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import StaleElementReferenceException
+from selenium.webdriver.common.action_chains import ActionChains
 
 import csv
 import sys
@@ -35,6 +36,14 @@ table_file = open(stat_category_table_file, "r+")
 
 table_reader = csv.reader(table_file, delimiter="\t")
 
+output_log = open("Output Log.txt", "w+")
+
+output_log.write("Statistical Category\tStatus\n")
+
+success_counter = 0
+
+failure_counter = 0
+
 time.sleep(.5)
 for row in table_reader:
     time.sleep(.5)
@@ -45,18 +54,25 @@ for row in table_reader:
     button_element = driver.find_element_by_id("widgetId_Right_commappingTablesListlistheaderadd_row").find_element_by_tag_name('button')
     # time.sleep(1)
 
-
     while True:
       try:
         time.sleep(2)
-        button_element.click()
+        actions = ActionChains(driver)
+        # actions.move_to_element(button_element)
+        actions.move_to_element(button_element).click().perform();
+        # button_element.click()
       except StaleElementReferenceException:
         continue # If StaleElement appears, try again
       break #
 
 
-    enter_values(driver, row)
+    values = enter_values(driver, row, output_log, success_counter, failure_counter)
 
+    success_counter = values[0]
+    failure_counter = values[1]
+print("Counts: \n")
+print("Values successfully entered:                   " + str(success_counter) + "\n")
+print("Values that couldn't be entered (check log):   " + str(failure_counter) + "\n")
 
-
+output_log.close()
 table_file.close()

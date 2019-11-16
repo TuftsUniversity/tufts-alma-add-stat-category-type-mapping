@@ -46,32 +46,43 @@ def navigate_to_table(driver):
 
 
 
-def enter_values(driver, row):
+def enter_values(driver, row, file, success_counter, failure_counter):
+
+
+    try:
+        type_id = "pageBeannewRowrowsourceCode1_hiddenSelect"
 
 
 
-    type_id = "pageBeannewRowrowsourceCode1_hiddenSelect"
+        category_id = "pageBeannewRowrowtargetCode_hiddenSelect"
+
+        code_element = driver.find_element_by_id(category_id)
+
+        driver.find_element_by_id("pageBeannewRowrowtargetCode_hiddenSelect_button").click()
+
+        time.sleep(.5)
+
+        driver.find_element_by_link_text(row[0]).click()
+
+        time.sleep(.5)
+
+
+        select = Select(driver.find_element_by_id(type_id))
+
+        time.sleep(.5)
+        select.select_by_visible_text(row[1])
 
 
 
-    category_id = "pageBeannewRowrowtargetCode_hiddenSelect"
 
-    code_element = driver.find_element_by_id(category_id)
-
-    driver.find_element_by_id("pageBeannewRowrowtargetCode_hiddenSelect_button").click()
-
-    time.sleep(.5)
-
-    driver.find_element_by_link_text(row[0]).click()
-
-    time.sleep(.5)
-
-
-    select = Select(driver.find_element_by_id(type_id))
-
-    select.select_by_visible_text(row[1])
-
-
-
-    if driver.find_element_by_id("cbuttonaddRow").is_displayed():
         driver.find_element_by_id("cbuttonaddRow").click()
+        file.write(row[0] + "\t" + "Success\n")
+        success_counter += 1
+        time.sleep(.5)
+    except:
+
+        file.write(row[0] + "\t" + "Failure - enter manually\n")
+        failure_counter += 1
+        time.sleep(.5)
+
+    return [success_counter, failure_counter]
