@@ -35,9 +35,9 @@ table_file = open(stat_category_table_file, "r+")
 
 table_reader = csv.reader(table_file, delimiter="\t")
 
-time.sleep(1)
+time.sleep(.5)
 for row in table_reader:
-    time.sleep(1)
+    time.sleep(.5)
     # driver.send_keys(Keys.PAGE_UP)
 
     driver.execute_script("window.scrollTo(0, 0)")
