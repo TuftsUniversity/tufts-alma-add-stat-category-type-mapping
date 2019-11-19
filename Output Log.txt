@@ -1,3 +1,0 @@
-Statistical Category	Status
-Urban And Environmental Policy - Test Error	Failure - enter manually
-Urban Justice & Sustain (CERT) - Test	Success

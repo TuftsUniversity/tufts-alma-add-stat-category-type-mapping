@@ -1,3 +1,4 @@
 old/*
 input/*
-secrets/*
+secrets/secrets.py
+secrets/__pycache__
